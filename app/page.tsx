@@ -1,3 +1,5 @@
+import WaitlistModal from '../components/WaitlistModal';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
@@ -5,15 +7,13 @@ export default function Home() {
       <nav className="border-b border-zinc-800">
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-zinc-950 font-mono text-xs font-bold">T</div>
-            <span className="font-semibold tracking-tight">Thunk</span>
+            <img src="/logo.svg" alt="Thunk" className="w-9 h-9" />
+            <span className="font-semibold tracking-tight text-xl">Thunk</span>
           </div>
           <div className="flex items-center gap-8 text-sm">
             <a href="#features" className="hover:text-zinc-400 transition-colors">Features</a>
             <a href="#about" className="hover:text-zinc-400 transition-colors">About</a>
-            <button className="px-5 py-2 bg-white text-zinc-950 rounded-full font-medium hover:bg-zinc-200 transition-colors">
-              Get Early Access
-            </button>
+            <WaitlistModal />   {/* This renders the button + modal */}
           </div>
         </div>
       </nav>
@@ -35,9 +35,7 @@ export default function Home() {
         </p>
 
         <div className="flex items-center justify-center gap-4">
-          <button className="px-8 py-4 bg-white text-zinc-950 rounded-2xl font-medium text-lg hover:bg-zinc-200 transition-all">
-            Join the Waitlist
-          </button>
+          <WaitlistModal />   {/* Second trigger */}
           <button className="px-8 py-4 border border-zinc-700 rounded-2xl font-medium text-lg hover:bg-zinc-900 transition-all">
             Learn more
           </button>
